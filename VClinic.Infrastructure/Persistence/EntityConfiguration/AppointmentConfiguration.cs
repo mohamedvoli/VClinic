@@ -13,11 +13,9 @@ namespace VClinic.Infrastructure.Persistence.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<Appointment> builder)
         {
-            builder.HasKey(b => b.BranchId);
+            builder.HasKey(b => b.AppointmentId);
 
-            //builder.Property(b => b.Name)
-            //       .IsRequired()
-            //       .HasMaxLength(100);
+            builder.Property(b => b.AppointmentDateTime).IsRequired();
 
             //builder.HasOne(b => b.Clinic)
             //       .WithMany(c => c.Branches)
