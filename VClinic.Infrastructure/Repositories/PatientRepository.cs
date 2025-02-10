@@ -36,7 +36,6 @@ namespace VClinic.Infrastructure.Repositories
             return await _dbContext.Appointments
                 .Where(a => a.PatientId == patientId)
                 .Include(a => a.Doctor)
-                .Include(a => a.Payment)
                 .OrderByDescending(a => a.AppointmentDateTime)
                 .ToListAsync();
         }
